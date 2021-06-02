@@ -45,7 +45,25 @@ public class AuditeurCNAM {
      *         homonymes...
      */
     public String login() {
-        return "";// à compléter
+        String nom =this.nom();
+        if(nom.length()>6)
+        {
+            nom=nom.substring(0,6);
+        }
+        nom=nom.replaceAll("[ ,-]", "_");
+        
+        String prenom =this.prenom();
+        if(prenom.length()>1){
+            prenom=prenom.substring(0,1);
+        }
+        
+        String finalResult;
+        finalResult=nom+"_"+prenom;
+        finalResult=finalResult.toLowerCase();
+        finalResult=finalResult.replaceAll("[é,ê,è,ë]","e");
+        finalResult=finalResult.replaceAll("[ä,â,á,à,]","a");
+        
+        return finalResult;
     }
 
     /**
@@ -54,7 +72,11 @@ public class AuditeurCNAM {
      * @return son nom
      */
     public String nom() {
-        return null;// à compléter
+        if(this.nom != null || ! this.nom.isEmpty()){
+            return this.nom;
+        }else{
+            return "le nom n'existe pas";
+        }
     }
 
     /**
@@ -63,7 +85,11 @@ public class AuditeurCNAM {
      * @return son prénom
      */
     public String prenom() {
-        return null;// à compléter
+        if(this.prenom != null || ! this.prenom.isEmpty()){
+            return this.prenom;
+        }else{
+            return "le prenom n'existe pas";
+        }   
     }
 
     /**
@@ -72,7 +98,11 @@ public class AuditeurCNAM {
      * @return son matricule
      */
     public String matricule() {
-        return null;// à compléter
+      if(this.matricule != null || ! this.matricule.isEmpty()){
+            return this.matricule;
+        }else{
+            return "la matricule n'existe pas";
+        }     
     }
 
     /**

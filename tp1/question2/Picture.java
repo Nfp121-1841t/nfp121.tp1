@@ -1,5 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package question2;
 
+/**
+ *
+ * @author DELL LATITUDE
+ */
 import question1.Circle;
 import question1.Square;
 import question1.Triangle;
@@ -9,17 +18,18 @@ import question1.Triangle;
  * draw method. But wait, there's more: being an electronic picture, it can be
  * changed. You can set it to black-and-white display and back to colors (only
  * after it's been drawn, of course).
- * 
+ *
  * This class was written as an early example for teaching Java with BlueJ.
- * 
+ *
  * @author Michael Kolling and David J. Barnes
  * @version 1.1 (24 May 2001)
  */
 public class Picture {
+
     private Square wall;
     private Square window;
     private Triangle roof;
-    private Circle sun;
+    private Circle sun , newSun;
 
     /**
      * Constructor for objects of class Picture
@@ -32,6 +42,7 @@ public class Picture {
      * Draw this picture.
      */
     public void draw() {
+        
         wall = new Square();
         wall.moveVertical(80);
         wall.changeSize(100);
@@ -51,10 +62,17 @@ public class Picture {
 
         sun = new Circle();
         sun.changeColor("yellow");
-        sun.moveHorizontal(180);
+        sun.moveHorizontal(0);
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+       
+        newSun = new Circle();
+        newSun.changeColor("blue");
+        newSun.moveHorizontal(180);
+        newSun.moveVertical(-10);
+        newSun.changeSize(60);
+        newSun.makeVisible();
     }
 
     /**
@@ -80,7 +98,13 @@ public class Picture {
             window.changeColor("black");
             roof.changeColor("green");
             sun.changeColor("yellow");
+     
         }
+    }
+
+    public void coucherSoleil() {
+       newSun.slowMoveVertical(250);
+
     }
 
 }

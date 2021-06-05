@@ -62,6 +62,8 @@ public class AuditeurCNAM {
         finalResult=finalResult.toLowerCase();
         finalResult=finalResult.replaceAll("[é,ê,è,ë]","e");
         finalResult=finalResult.replaceAll("[ä,â,á,à,]","a");
+        finalResult=finalResult.replaceAll("[í,ï]", "i");
+        finalResult=finalResult.replaceAll("[ô]", "o");
         
         return finalResult;
     }

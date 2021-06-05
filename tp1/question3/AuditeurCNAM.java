@@ -74,11 +74,7 @@ public class AuditeurCNAM {
      * @return son nom
      */
     public String nom() {
-        if(this.nom != null || ! this.nom.isEmpty()){
-            return this.nom;
-        }else{
-            return "le nom n'existe pas";
-        }
+        return nom;
     }
 
     /**
@@ -87,11 +83,7 @@ public class AuditeurCNAM {
      * @return son prénom
      */
     public String prenom() {
-        if(this.prenom != null || ! this.prenom.isEmpty()){
-            return this.prenom;
-        }else{
-            return "le prenom n'existe pas";
-        }   
+       return prenom;
     }
 
     /**
@@ -100,11 +92,7 @@ public class AuditeurCNAM {
      * @return son matricule
      */
     public String matricule() {
-      if(this.matricule != null || ! this.matricule.isEmpty()){
-            return this.matricule;
-        }else{
-            return "la matricule n'existe pas";
-        }     
+      return matricule;
     }
 
     /**
